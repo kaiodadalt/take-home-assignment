@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\BankingService;
 use App\Services\TestService;
 use Laravel\Octane\Contracts\OperationTerminated;
 use Laravel\Octane\Events\RequestHandled;
@@ -133,6 +134,7 @@ return [
 
     'warm' => [
         ...Octane::defaultServicesToWarm(),
+        BankingService::class
     ],
 
     'flush' => [
