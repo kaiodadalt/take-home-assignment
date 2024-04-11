@@ -38,9 +38,9 @@ class BankingService
      *
      * @param  string $origin
      * @param  float $amount
-     * @return float
+     * @return ?float
      */
-    public function withdraw(string $origin, float $amount): float
+    public function withdraw(string $origin, float $amount): ?float
     {
         if (
             isset($this->accounts[$origin]) &&
@@ -59,9 +59,9 @@ class BankingService
      * @param  string $origin
      * @param  string $destination
      * @param  float $amount
-     * @return array
+     * @return ?array
      */
-    public function transfer(string $origin, string $destination, float $amount): array
+    public function transfer(string $origin, string $destination, float $amount): ?array
     {
         $originBalance = $this->withdraw($origin, $amount);
         if ($originBalance !== null) {
