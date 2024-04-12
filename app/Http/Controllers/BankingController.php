@@ -22,7 +22,8 @@ class BankingController extends Controller
      */
     public function reset(): Response
     {
-        return response($this->bankingService->reset());
+        $this->bankingService->reset();
+        return response('OK');
     }
     
     /**
